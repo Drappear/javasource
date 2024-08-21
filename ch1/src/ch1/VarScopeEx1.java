@@ -7,7 +7,7 @@ public class VarScopeEx1 {
 
         int a = 25;
         int c;
-        int d;
+        // int d;
 
         {
             int b = 35;
