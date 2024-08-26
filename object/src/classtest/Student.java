@@ -27,9 +27,10 @@ public class Student {
     }
 
     public Student(String studentNum, String name, String address, String phone) {
-        this.studentNum = studentNum;
-        this.name = name;
-        this.address = address;
+        // this.studentNum = studentNum;
+        // this.name = name;
+        // this.address = address;
+        this(studentNum, name, address);
         this.phone = phone;
     }
 
