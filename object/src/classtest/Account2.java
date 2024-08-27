@@ -1,6 +1,6 @@
 package classtest;
 
-public class Account {
+public class Account2 {
     // 계좌번호(accountNo) : 101-11-12345
     // 계좌주(owner) : 홍길동
     // 잔액(balance) : 1000000 // int
@@ -9,7 +9,7 @@ public class Account {
     private String owner;
     private int balance;
 
-    public Account(String accountNo, String owner, int balance) {
+    public Account2(String accountNo, String owner, int balance) {
         this.accountNo = accountNo;
         this.owner = owner;
         this.balance = balance;
@@ -38,6 +38,10 @@ public class Account {
         return balance;
     }
 
+    public void setBalance(int balance) {
+        this.balance += balance;
+    }
+
     public String getAccountNo() {
         return accountNo;
     }
@@ -45,4 +49,10 @@ public class Account {
     public String getOwner() {
         return owner;
     }
+
+    @Override
+    public String toString() {
+        return "Account2 [accountNo=" + accountNo + ", owner=" + owner + ", balance=" + balance + "]";
+    }
+
 }
