@@ -141,5 +141,15 @@ public class StringEx {
         // float => Float / boolean => Boolean / double => Double / char => Character
         float f1 = 3.14f;
         Float f2 = 3.14f;
+
+        str1 = "Hello World";
+        System.out.println();
+        // 거꾸로 출력
+        for (int k = str1.length() - 1; k >= 0; k--) {
+            System.out.print(str1.charAt(k));
+        }
+        // StringBuffer 의 reverse() 이용
+        StringBuffer sb = new StringBuffer(str1);
+        System.out.println("\n" + sb.reverse());
     }
 }
