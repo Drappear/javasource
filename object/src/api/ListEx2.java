@@ -17,5 +17,12 @@ public class ListEx2 {
         System.out.println(list.get(2));
         System.out.println(list.remove(2));
         System.out.println(list);
+
+        System.out.println("\n=============================\n");
+
+        for (Member member : list) {
+            System.out.println(member.getId() + " : " + member.getName());
+        }
+
     }
 }
