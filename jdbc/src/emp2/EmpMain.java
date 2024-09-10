@@ -1,5 +1,6 @@
 package emp2;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class EmpMain {
@@ -31,16 +32,35 @@ public class EmpMain {
                     System.out.println(result ? "입력성공" : "입력실패");
                     break;
                 case 2:
-
+                    int empNo = util.getEmpNo(sc);
+                    dto = service.getRow(empNo);
+                    util.printEmp(dto);
                     break;
                 case 3:
-
+                    List<EmpDTO> list = service.getList();
+                    util.printEmpList(list);
                     break;
                 case 4:
-
+                    dto = util.updateInfo(sc);
+                    result = service.updateEmpInfo(dto);
+                    // System.out.println(result ? "수정완료" : "수정실패");
+                    if (result) {
+                        // 수정한 사원의 정보 출력
+                        dto = service.getRow(dto.getEmpNo());
+                        util.printEmp(dto);
+                    } else {
+                        System.out.println("수정 실패");
+                    }
                     break;
                 case 5:
-
+                    int deleteEmpNo = util.deleteEmpNo(sc);
+                    System.out.println(service.deleteEmpInfo(deleteEmpNo) ? "삭제성공" : "삭제실패");
+                    // dto = service.getRow(deleteEmpNo);
+                    // if (service.deleteEmpInfo(deleteEmpNo)) {
+                    // System.out.println("사번 : " + dto.getEmpNo() + ", " + dto.geteName() + " 사원의
+                    // 정보가 삭제되었습니다.");
+                    // dto = null;
+                    // }
                     break;
                 case 6:
                     run = false;
